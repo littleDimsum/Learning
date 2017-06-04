@@ -418,3 +418,191 @@ function removeNumbersLargerThan(num, obj) {
   }
   return obj;
 }
+
+// exercise 70 (counting from 0 to 69)
+
+function removeNumbersLessThan(num, obj) {
+  // your code here
+  for (var i in obj) {
+    if (obj[i] < num) {
+      delete obj[i];
+    }
+  }
+  return obj;
+}
+
+function removeStringValuesLongerThan(num, obj) {
+  // your code here
+  for (var i in obj) {
+    if (typeof(obj[i]) === 'string' && obj[i].length > num) {
+      delete obj[i];
+    }
+  }
+  return obj;
+}
+
+var obj = {
+  name: 'Montana',
+  age: 20,
+  location: 'Texas'
+};
+removeStringValuesLongerThan(6, obj);
+console.log(obj); // { age: 20, location: 'Texas' }
+
+function removeEvenValues(obj) {
+  // your code here
+  for (var i in obj) {
+    if (typeof(obj[i]) === 'number' && obj[i]%2 === 0) {
+      delete obj[i];
+    }
+  }
+  return obj;
+}
+
+function removeOddValues(obj) {
+  // your code here
+  for (var i in obj) {
+    if (typeof(obj[i]) === 'number' && obj[i]%2 === 1) {
+      delete obj[i];
+    }
+  }
+  return obj;
+}
+
+function removeArrayValues(obj) {
+  // your code here
+  for (var i in obj) {
+    if (obj[i] instanceof Array) {
+      delete obj[i];
+    }
+  }
+  return obj;
+}
+
+function removeNumberValues(obj) {
+  // your code here
+  for (var i in obj) {
+    if (typeof(obj[i]) === 'number') {
+      delete obj[i];
+    }
+  }
+  return obj;
+}
+
+function removeStringValues(obj) {
+  // your code here
+  for (var i in obj) {
+    if (typeof(obj[i]) === 'string') {
+      delete obj[i];
+    }
+  }
+  return obj;
+}
+
+function convertDoubleSpaceToSingle(str) {
+  // your code here
+  var oneSpace = str.replace(/  +/g, ' ');
+  return oneSpace;
+}
+
+var output = convertDoubleSpaceToSingle("string  with  double  spaces");
+console.log(output);
+
+function joinThreeArrays(arr1, arr2, arr3) {
+  // your code here
+  return (arr1.concat(arr2, arr3));
+}
+
+function addToFrontOfNew(arr, element) {
+  // your code here
+  var elementArr = [element];
+  return (elementArr.concat(arr));
+}
+
+function addToBackOfNew(arr, element) {
+  // your code here
+  return (arr.concat(element));
+}
+
+function getAllElementsButNth(array, n) {
+  // your code here
+  array.splice(n, 1)
+  return array;
+}
+
+function areValidCredentials(name, password) {
+  // your code here
+  return (name.length > 3 && password.length >= 8)
+}
+
+function getIndexOf(char, str) {
+  // your code here
+  for (i = 0; i < str.length; i++) {
+    console.log(str[i])
+    if (str[i] === char) {
+      return i;
+    }
+  }
+  return -1;
+}
+
+var output = getIndexOf('a', 'I am a hacker');
+console.log(output);
+
+/* function findMinLengthOfThreeWords(word1, word2, word3) {
+  // your code here
+  var shortest = 100;
+  for (i = 0; i < arguments.length; i++) {
+    if (arguments[i].length < shortest) {
+      shortest = arguments[i].length;
+    }
+  }
+  return shortest;
+}
+
+*/
+
+function findMinLengthOfThreeWords(word1, word2, word3) {
+  // your code here
+  var length = [];
+  for (i = 0; i < arguments.length; i++) {
+     length.push(arguments[i].length);
+    }
+  return Math.min(...length);
+}
+
+function findMaxLengthOfThreeWords(word1, word2, word3) {
+  // your code here
+  var lengths = [];
+  for (i = 0; i < arguments.length; i++) {
+    lengths.push(arguments[i].length);
+  }
+  return Math.max(...lengths);
+}
+
+function getElementsThatEqual10AtProperty(obj, key) {
+  // your code here
+  var result = [];
+  // even though style guide says against it
+  // have to use for.. in loop
+  // otherwise doesn't pass the test
+  for (var i in obj[key]) {
+    if (obj[key][i] === 10) {
+      result.push(obj[key][i]);
+    }
+  }
+  return result;
+}
+
+function select(arr, obj) {
+  // your code here
+  var result = {};
+  for (var i in obj) {
+    if (arr.includes(i)) {
+      result[i] = obj[i];
+    }
+  }
+  return result;
+}
+
+// exercise 89
